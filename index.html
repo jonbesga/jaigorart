@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+<head>
+  <title>Jaigor Art</title>
+  <meta name="description" content="A wonderful gallery of pixelated portraits"/>
+  <meta property="og:description" content="A wonderful gallery of pixelated portraits"/>
+  <meta property="og:title" content="Jaigor Art"/>
+  <meta property="og:image" content="http://jaigorart.jonanderbesga.com/images/fb.jpg"/>
+  <meta property="og:site_name" content="Jaigor Art"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="http://jaigorart.jonanderbesga.com/"/>
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="http://jaigorart.jonanderbesga.com">
+  <meta name="twitter:title" content="Jaigor Art">
+  <meta name="twitter:description" content="A wonderful gallery of pixelated portraits">
+  <meta name="twitter:image" content="http://jaigorart.jonanderbesga.com/images/pic2.jpg">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css?family=Satisfy|Indie+Flower" rel="stylesheet">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+    ga('create', 'UA-79369734-2', 'auto');
+    ga('send', 'pageview');
+  
+  </script>
+
+  <style type="text/css">
+    
+    body{
+      margin: 0;
+      background:url('background.jpg') center 290px fixed;
+      background-size: auto auto;
+    }
+
+    h1{
+      text-align: center;
+      color: black;
+      text-shadow: 5px 5px 5px white;
+      margin: 0;
+      font-size: 76px;
+      font-family: 'Satisfy', cursive;
+    }
+
+    .content{
+      text-align: center;
+      width: 100%;
+      height: 250px;
+      margin-top: 5%;
+      background: white;
+    }
+
+    div.frame{
+      position: relative;
+      display: inline-block;
+      background: url('canvas.jpg') no-repeat center center;
+      background-size: 100% 100%;
+      height: 240px;
+      width: 240px;
+    }
+    :root{
+      --canvas-width: 1600;
+      --canvas-height: 1200;
+    }
+    div.frame div.image{
+      position: absolute;
+      left: calc(100% * 200/var(--canvas-width));
+      top: calc(100% * 220/var(--canvas-height));
+      width: calc(100% - (100% * 205/var(--canvas-width)) * 2);
+      height: calc(100% - (100% * 220/var(--canvas-height)) * 2);
+      background: url() no-repeat center center;
+      background-size: contain;
+      /*background-color: red;*/
+    }
+    div.frame div.description{
+      position: absolute;
+      left: calc(100% * 200/var(--canvas-width));
+      top: calc(100% * 220/var(--canvas-height));
+      width: calc(100% - (100% * 205/var(--canvas-width)) * 2);
+      height: calc(100% - (100% * 220/var(--canvas-height)) * 2);
+      background-color: white;
+    }
+    div.frame div.description p{
+      margin-top: 40%;
+    }
+
+  </style>
+</head>
+<body>
+<div class="brand">
+  <h1>Jaigor Art</h1>  
+</div>
+<div class="content">
+  <div class="frame">
+    <div class="image" style="background-image: url('images/pic1.jpg');"></div>
+    <div class="description" style="display: none;"><p>Modern Jesus</p></div>
+  </div>
+  <div class="frame">
+    <div class="image" style="background-image: url('images/pic2.jpg');"></div>
+    <div class="description" style="display: none;"><p>Is Python sou gud?</p></div>
+  </div>
+  <div class="frame">
+    <div class="image" style="background-image: url('images/pic3.jpg');"></div>
+    <div class="description" style="display: none;"><p>He is my boyfriend</p></div>
+  </div>
+  <div class="frame">
+    <div class="image" style="background-image: url('images/pic4.jpg');"></div>
+    <div class="description" style="display: none;"><p>A human and his owner</p></div>
+  </div>
+  <div class="frame">
+    <div class="image" style="background-image: url('images/pic5.png');"></div>
+    <div class="description" style="display: none;"><p>Do it more complex</p></div>
+    </div>
+</div>
+<script type="text/javascript">
+  function showDescription () {
+    const description = this.querySelector('.description');
+    if(!description) return;
+    description.style.setProperty('display', 'block');
+  }
+  function hideDescription () {
+    const description = this.querySelector('.description');
+    if(!description) return;
+    description.style.setProperty('display', 'none');
+  }
+
+  const allFrames = document.querySelectorAll('.frame');
+  allFrames.forEach(frame => {
+    frame.addEventListener('mouseover', showDescription);
+    frame.addEventListener('mouseout', hideDescription);
+  });
+</script>
+</body>
+</html>
